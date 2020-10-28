@@ -1,0 +1,6 @@
+.body-background {
+    background-image: url('http://www.pptbackgrounds.org/uploads/medical-pharmaceuticals-powerpoint-templates.jpg');
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    z-index: -10;}

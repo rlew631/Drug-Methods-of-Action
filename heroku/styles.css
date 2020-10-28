@@ -1,0 +1,6 @@
+.body-background {
+    background-image: url(‘./figures/background.jpg’);
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    z-index: -10;}
