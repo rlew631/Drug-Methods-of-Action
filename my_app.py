@@ -61,7 +61,12 @@ if page == "Exploratory Data Analysis":
         # disable the warning message
 
         featurelist = ['g-0','g-1','g-2','c-0','c-1','c-2']
-        plt.rcParams.update({"figure.facecolor":  (0.0, 0.0, 0.0, 0.0)})
+        #plt.rcParams.update({"figure.facecolor":  (0.0, 0.0, 0.0, 0.0)})
+        sns.set(rc={'axes.facecolor':(0.0, 0.0, 0.0, 0.0),
+        	'figure.facecolor':(0.0, 0.0, 0.0, 0.0),
+        	'axes.grid' : False
+        	#'legend.facecolor': (0.0, 0.0, 0.0, 0.1)
+        	})
         for featurename in featurelist:
             bincount = list(np.linspace(min(train_features[featurename]), max(train_features[featurename]), 60))
             N, bins, patches = plt.hist(values, bins = bincount, rwidth=0.75)
@@ -82,6 +87,7 @@ if page == "Exploratory Data Analysis":
             orange_patch = mpatches.Patch(color='orange', label='Range Present in\n' + selection[0] + '\ndrugs')
             blue_patch = mpatches.Patch(color='blue', label='Range Absent in\n' + selection[0] + '\ndrugs')
             plt.legend(handles=[blue_patch, orange_patch], fontsize=8)
+            plt.legend(facecolor='white', framealpha=1)
             #fig = plt.show()
             sns.despine(top=True, right=True, left=False, bottom=False)
             st.pyplot(fig)
@@ -93,12 +99,8 @@ if page == "Model Results":
     graph2 = open('figures/Plotly_all_logloss_2020-10-27.html', 'r', encoding='utf-8')
     source_code2= graph2.read()
     components.html(source_code1, height = 600, width = 800)
-    st.write("Should the legend be put in the graph even if I can't make the box opaque? (might cover some of the points)")
     components.html(source_code2, height = 600, width = 800)
     #st.markdown(graph1_html, unsafe_allow_html=True)
-    st.write('Maybe there should be another two grouped histograms,... one which compares precision and one which compares recall')
-    st.write('Ask Anterra if there should be an explanation here for the usefulness of the precision/recall values: i.e. this is a drug development screening tool that would be used pre-preclinical trials when sending batches of drugs to be tested blah blah blah')
-
 if page == "Conclusions":
     st.markdown(page_bg_img, unsafe_allow_html=True)
     st.write('It was surprising that the prediction scores between the linear model, ')
