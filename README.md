@@ -15,7 +15,7 @@ The results from this modelling phase look promising for further development. It
 
 Based on the highly similar log loss values from the logistic regression, random forest regression and linSVR models it is unlikely that further improvements could be made to the model using stacked ensembling or a naive bayes model. Knowing that there are improvements which can be made to the prediction model the Linear SVR model is the clear winner with a runtime of only 34s and performance comparable to the logistic regression and random forest models.
 
-| Model | Runtime | Logloss Value |
+| Model | Runtime | Log Loss Value |
 |-----------------------|---------|----------------|
 | Logistic Regression | 32 minutes 9 seconds | 0.02006 |
 | Random Forest Regression | 26 minutes 30 seconds | 0.02031 |
