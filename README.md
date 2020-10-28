@@ -2,18 +2,15 @@
 
 ## Project Overview
 
-The purpose of this project is to find a relationship between drug attributes and their corresponding methods of action
+The purpose of this project is to find a relationship between drug attributes and their corresponding methods of action. This could improve the efficiency of the drug development process by selectively eliminating drug candidates which are likely to have additional unwanted MOAs (mechanisms of action) before moving on to the screening and preclinical trial phases of development.
+
+Each drug experiment contains roughly 600 features related to genetic expression and 200 related to chemical attributes. A new model is made for each method of action and predicts the results as a function of how likely a given drug is to express an MOA. This is an incredibly useful tool which could allow researchers to predict a drug's viability and MOAs.
 
 The csv files used in this project can be found in the [Kaggle LISH-MOA Data Repository](https://www.kaggle.com/c/lish-moa/data)
 
-Each drug experiment contains roughly 600 features related to genetic expression and 200 related to chemical attributes. A new model is made for each method of action and predicts the results as a function of how likely a given drug is to express an MOA. This is an incredibly useful tool which could allow researchers to predict a drug's viability and MOAs. This could improve the efficiency of the drug development process by selectively eliminating drug candidates which are unlikely to be viable before moving on to the screening and preclinical trial phases of development.
-
 ## Implementation
 
-## Conclusion
-The results from this modelling phase look promising for further development. It is worth noting that several other models which can be found on Kaggle were able to achieve a higher accuracy using neural networks.
-
-Based on the highly similar log loss values from the logistic regression, random forest regression and linSVR models it is unlikely that further improvements could be made to the model using stacked ensembling or a naive bayes model. Knowing that there are improvements which can be made to the prediction model the Linear SVR model is the clear winner with a runtime of only 34s and performance comparable to the logistic regression and random forest models.
+A _pipeline_ was created for this project in order to facilitate the testing of several models. Since the problem is/was a multi-label classification problem it was necessary to create an individual one vs rest model for each target MOA which would predict the likelyhood of a drug expressing itself in the given manner. This involved creating 206 individual target models for each MOA present in the dataset. For each target a stratified k fold split was performed on the training population to maintain the dataset's class balance in each split. For each split of the data a StandardScaler was fit to the trian data and used to trasform the train/val data. The models in the table below were each run through the pipeline and produced the following results:
 
 | Model | Runtime | Log Loss Value |
 |-----------------------|---------|----------------|
@@ -21,6 +18,11 @@ Based on the highly similar log loss values from the logistic regression, random
 | Random Forest Regression | 26 minutes 30 seconds | 0.02031 |
 | Linear SVR | 0 minutes 34 seconds | 0.02059 |
 | NuSVR | 59 minutes 27 seconds | 0.07413 |
+
+## Conclusion
+The results from this modelling phase look promising for further development. It is worth noting that several other models which can be found on Kaggle were able to achieve a higher accuracy using neural networks.
+
+Based on the highly similar log loss values from the logistic regression, random forest regression and linSVR models it is unlikely that further improvements could be made to the model using stacked ensembling or a naive bayes model. Knowing that there are improvements which can be made to the prediction model the Linear SVR model is the clear winner with a runtime of only 34s and performance comparable to the logistic regression and random forest models.
 
 ## Next Steps
 
