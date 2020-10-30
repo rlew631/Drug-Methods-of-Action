@@ -19,6 +19,8 @@ A _pipeline_ was created for this project in order to facilitate the testing of 
 | Linear SVR | 0 minutes 34 seconds | 0.02059 |
 | NuSVR | 59 minutes 27 seconds | 0.07413 |
 
+![Process Diagram](https://github.com/rlew631/Drug-Methods-of-Action/blob/main/figures/Pipeline.png?raw=true)
+
 ## Conclusion
 The results from this modelling phase look promising for further development. It is worth noting that several other models which can be found on Kaggle were able to achieve a higher accuracy using neural networks.
 
