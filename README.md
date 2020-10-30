@@ -18,7 +18,9 @@ A _pipeline_ was created for this project in order to facilitate the testing of 
 | Random Forest Regression | 26 minutes 30 seconds | 0.02031 |
 | Linear SVR | 0 minutes 34 seconds | 0.02059 |
 | NuSVR | 59 minutes 27 seconds | 0.07413 |
+
 <br /><br />
+
 ![Process Diagram](https://github.com/rlew631/Drug-Methods-of-Action/blob/main/figures/Pipeline.png?raw=true)
 
 ## Conclusion
