@@ -1,5 +1,7 @@
 # Drug-Methods-of-Action
 
+[Click here to see the interactive dashboard for this project](https://moa-prediction-app.herokuapp.com/)
+
 ## Project Overview
 
 The purpose of this project is to find a relationship between drug attributes and their corresponding methods of action. This could improve the efficiency of the drug development process by selectively eliminating drug candidates which are likely to have additional unwanted MOAs (mechanisms of action) before moving on to the screening and preclinical trial phases of development.
