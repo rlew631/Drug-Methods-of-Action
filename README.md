@@ -1,5 +1,7 @@
 # Drug-Methods-of-Action
 
+## View the App:
+
 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://moa-prediction-app.herokuapp.com/)
 
 ## Project Overview
